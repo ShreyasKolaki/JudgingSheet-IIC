@@ -6,7 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Judging System")
 
 # Allow all origins during development.
-# For production, replace "*" with your deployed frontend URL.
+# For production: replace "*" with your Cloudflare Workers URL after deploying frontend.
+# Example: "https://tanstack-start-app.YOUR-NAME.workers.dev"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
