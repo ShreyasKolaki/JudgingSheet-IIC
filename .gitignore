@@ -1,0 +1,23 @@
+# ── Backend (Python/FastAPI) ───────────────────────────────────────────────
+judgeviewB/.env
+judgeviewB/__pycache__/
+judgeviewB/**/__pycache__/
+judgeviewB/*.pyc
+judgeviewB/*.pyo
+judgeviewB/.venv/
+judgeviewB/venv/
+judgeviewB/*.egg-info/
+judgeviewB/add_teams.py
+
+# ── Frontend (Node/Vite) ───────────────────────────────────────────────────
+judgeviewF/.env
+judgeviewF/.env.local
+judgeviewF/node_modules/
+judgeviewF/dist/
+judgeviewF/.wrangler/
+judgeviewF/.output/
+
+# ── General ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
