@@ -10,8 +10,11 @@ app = FastAPI(title="Judging System")
 # Example: "https://tanstack-start-app.YOUR-NAME.workers.dev"
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,  # Must be False when allow_origins=["*"]
+    allow_origins=[
+        "https://tanstack-start-app.aura-registration-portal.workers.dev",
+        "http://localhost:5173",  # local dev
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
