@@ -1,5 +1,7 @@
 # 🏆 Judging Dashboard & Leaderboard System
 
+**🌐 Live Demo:** [https://judgeboard.aura-registration-portal.workers.dev](https://judgeboard.aura-registration-portal.workers.dev)
+
 A Full Stack Judging Dashboard System designed for events like Hackathons, Ideathons, and RoboWars. This system replaces traditional spreadsheet-based judging with a real-time, automated, role-based evaluation system.
 
 ## 📌 Overview
