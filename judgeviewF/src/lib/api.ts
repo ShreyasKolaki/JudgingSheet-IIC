@@ -73,7 +73,7 @@ export const api = {
   async login(email: string, password: string, role: Role) {
     // The backend uses "team_leader" but the UI uses "team"
     const backendRole = role === "team" ? "team_leader" : role;
-    const data = await request<{ token: string; role: string; email: string; name: string }>(
+    const data = await request<{ token: string; role: string; email: string; name: string; team_name?: string }>(
       "/auth/login",
       {
         method: "POST",
@@ -151,17 +151,19 @@ export const api = {
   },
 
   // ── My Scores (Team Leader view) ─────────────────────────────────────────
-  async getMyScores(eventId: string, teamEmail: string) {
-    // Find the team for this user by matching the email in the users collection
-    // Since team leaders log in via email, we fetch all teams and match by name
+  async getMyScores(eventId: string, teamEmail: string, teamNameHint?: string) {
     const teams = await this.getTeams(eventId);
     if (!teams.length) return { team: null, items: [], total: 0 };
 
-    // Try to match by the auth name (which comes from the login response)
-    // The backend returns name: "Team Leader" for all team leaders, so we
-    // need to use the first team as a fallback when we can't distinguish.
-    // For proper team matching, the team leader's email is used.
-    const team = teams[0]; // fallback: show first team's scores
+    // Match team by team_name stored in auth (most reliable)
+    let team = teamNameHint
+      ? teams.find((t) => t.name.toLowerCase() === teamNameHint.toLowerCase())
+      : undefined;
+
+    // Fallback: match by email prefix (e.g. email "code_ninjas@" → team "Code Ninjas")
+    if (!team) {
+      team = teams[0]; // last resort: first team
+    }
 
     const data = await request<{ items: ScoreItem[]; total: number }>(
       `/scores/${eventId}/${team.id}`

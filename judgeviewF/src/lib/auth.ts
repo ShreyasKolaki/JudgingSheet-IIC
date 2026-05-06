@@ -7,6 +7,7 @@ export interface AuthUser {
   role: Role;
   token: string;
   name: string;
+  team_name?: string; // only present for team_leader accounts
 }
 
 const KEY = "jd_auth";

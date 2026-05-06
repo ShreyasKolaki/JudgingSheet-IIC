@@ -30,7 +30,7 @@ function TeamScores() {
     if (!eventId || !auth) return;
     setLoading(true);
     setData(null);
-    api.getMyScores(eventId, auth.email)
+    api.getMyScores(eventId, auth.email, auth.team_name)
       .then(setData)
       .catch(() => toast.error("Failed to load your scores"))
       .finally(() => setLoading(false));
