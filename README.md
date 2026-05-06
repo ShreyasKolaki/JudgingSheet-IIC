@@ -33,6 +33,19 @@ Traditional judging systems suffer from manual calculation errors, lack of a rea
 - **Responsibilities:** View their team’s scores and leaderboard, compare rankings.
 - **Restrictions:** Read-only access; cannot edit anything.
 
+#### 🧪 Pre-configured Team Logins (MongoDB Atlas)
+Use these pre-configured credentials to test the team leader dashboard:
+
+| Team Name | Team Leader Email | Password |
+|-----------|-------------------|----------|
+| Code Ninjas | `team1@gmail.com` | `password123` |
+| Cyber Squad | `team2@gmail.com` | `password123` |
+| Data Miners | `team3@gmail.com` | `password123` |
+| Byte Benders | `team4@gmail.com` | `password123` |
+| Tech Titans | `team5@gmail.com` | `password123` |
+| AI Avengers | `team6@gmail.com` | `password123` |
+| Quantum Coders | `team7@gmail.com` | `password123` |
+
 ## 🧮 Scoring Logic & Calculation
 
 **Criteria Example:**
