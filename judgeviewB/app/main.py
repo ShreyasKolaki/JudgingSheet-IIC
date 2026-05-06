@@ -11,7 +11,7 @@ app = FastAPI(title="Judging System")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://tanstack-start-app.aura-registration-portal.workers.dev",
+        "https://judgeboard.aura-registration-portal.workers.dev",
         "http://localhost:5173",  # local dev
     ],
     allow_credentials=False,
